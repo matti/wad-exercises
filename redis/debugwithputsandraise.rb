@@ -5,6 +5,9 @@ require 'redis'
 
 get '/redis' do
  redis = Redis.new
+ 
+ puts redis.inspect
+ raise redis.inspect
   
  redis.set "hello", "world"
  
