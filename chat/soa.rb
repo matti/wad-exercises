@@ -3,7 +3,7 @@ require 'sinatra/reloader'
 
 require 'redis'
 
-set :port, 10100
+set :port, 10_003
 
 before do
   @redis = Redis.new
