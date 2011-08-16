@@ -11,21 +11,21 @@ Integreat "x1" do
       assert("401", browser.responses.last.status)
     end
     
-    Step "x3" do
+    Step "x4" do
       @browser = Curlser.new "http://joe:d34db33f@localhost:4567"      
     end
     
-    Step "x4" do
+    Step "x5" do
       @browser.get "/"
       assert(true, @browser.responses.last.body.include?('/messages" method="POST"'))
     end
     
-    Step "x4" do
+    Step "x6" do
       @browser.post "/messages", { "message" => "Hello, Helsinki" }
       assert("302", @browser.responses.last.status)
     end
     
-    Step "x5" do
+    Step "x7" do
       @browser.get "/"
       assert(true, @browser.responses.last.body.include?("Hello, Helsinki"))
     end
