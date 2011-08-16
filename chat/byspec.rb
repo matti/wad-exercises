@@ -4,14 +4,14 @@ require 'sinatra/reloader'
 require 'redis'
 
 
+use Rack::Auth::Basic do |username, password|
+   username == 'joe' && password == 'd34db33f'
+end
+
 
 before do
-  use Rack::Auth::Basic do |username, password|
-     username == 'joe' && password == 'd34db33f'
-  end
 
   @redis = Redis.new
-
 
 end
 

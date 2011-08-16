@@ -21,11 +21,18 @@ Integreat "x1" do
     end
     
     Step "x6" do
+      3.times do
+        @browser.post "/messages", { "message" => "Hallo, Berlin" }
+      end
+      assert("302", @browser.responses.last.status)      
+    end
+      
+    Step "x7" do
       @browser.post "/messages", { "message" => "Hello, Helsinki" }
       assert("302", @browser.responses.last.status)
     end
     
-    Step "x7" do
+    Step "x8" do
       @browser.get "/"
       assert(true, @browser.responses.last.body.include?("Hello, Helsinki"))
     end
