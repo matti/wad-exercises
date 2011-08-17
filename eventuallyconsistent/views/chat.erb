@@ -1,0 +1,13 @@
+<% for message in @messages do %>
+
+	<%= message %> <br/>
+
+<% end %>
+
+
+<form action="http://localhost:4567/messages" method="POST">
+	
+	<input type="text" name="message" />
+	<input type="submit" name="ok" />
+	
+</form>
